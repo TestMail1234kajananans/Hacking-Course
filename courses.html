@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ethical Hacking Courses</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            padding: 20px;
+            background-color: #f4f4f4;
+            text-align: center;
+        }
+        h1 {
+            color: #333;
+        }
+        a {
+            display: block;
+            margin: 10px 0;
+            padding: 10px;
+            text-decoration: none;
+            color: #007bff;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        a:hover {
+            background-color: #e9ecef;
+        }
+        .info {
+            margin: 20px 0;
+            padding: 10px;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            display: inline-block;
+            text-align: left;
+        }
+        .copy-button {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 10px 20px;
+            color: #fff;
+            background-color: #007bff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .copy-button:hover {
+            background-color: #0056b3;
+        }
+        .hidden {
+            display: none;
+        }
+        .notice {
+            margin-top: 20px;
+            font-size: 14px;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <h1>Download Ethical Hacking Courses</h1>
+
+    <div id="content" class="hidden">
+        <a href="https://www.mediafire.com/file/mrcz8aa7ji05a2m/Quick_Hack_-_Beginners_Ethical_Hacking_Course_%2528White_Hat%2529.zip/fil" target="_blank">
+            1. Quick Hack - Beginners Ethical Hacking Course (White Hat)
+        </a>
+        <a href="https://www.mediafire.com/file/6s6l144339ja2yl/Masters-In-Ethical-Hacking-Course-2-Gib-.7z/file" target="_blank">
+            2. Masters In Ethical Hacking Course
+        </a>
+        <a href="https://www.mediafire.com/file/qyd1zpe76jptpmp/Hackstars_-_Cybersecurity_Course_%2528by_%2540technicalassu_on_yt%2529.zip/file" target="_blank">
+            3. Hackstars - Cybersecurity Course
+        </a>
+        <div class="info">
+            <h2>Hackstars Course Password</h2>
+            <p id="password-text">The password for the Hackstars course is: <strong id="pass">youtube.com/technicalassu</strong></p>
+            <button class="copy-button" onclick="copyPassword()">Copy Password</button>
+        </div>
+    </div>
+
+    <div id="access-form">
+        <h2>Enter Access Code</h2>
+        <input type="text" id="access-code" placeholder="Enter code">
+        <button onclick="verifyAccess()">Verify</button>
+    </div>
+
+    <div class="notice">
+        Note: The access code is the same as the transaction ID provided after payment.
+    </div>
+
+    <script>
+        function copyPassword() {
+            const passwordText = document.getElementById('pass').innerText;
+            navigator.clipboard.writeText(passwordText).then(() => {
+                alert('Password copied to clipboard!');
+            }, (err) => {
+                alert('Failed to copy password: ', err);
+            });
+        }
+
+        function verifyAccess() {
+            const accessCode = document.getElementById('access-code').value;
+            const correctCode = '419298227233'; // Replace with the code provided after payment
+
+            if (accessCode === correctCode) {
+                document.getElementById('content').classList.remove('hidden');
+                document.getElementById('access-form').classList.add('hidden');
+            } else {
+                alert('Invalid code. Please check your payment confirmation.');
+            }
+        }
+    </script>
+</body>
+</html>

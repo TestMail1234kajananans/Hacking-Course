@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QR Code and UPI ID</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            text-align: center;
+        }
+        .qr-code img {
+            max-width: 90vw;
+            max-height: 90vh;
+            padding-top: 10vw!important;
+        }
+        .upi-id {
+            margin: 20px 0;
+            font-size: 18px;
+        }
+        .copy-btn {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        .transaction-box {
+            margin-top: 5vw!important;
+            padding: 1vw 5vw;
+            margin-bottom: 20vw!important;
+            width: 90%;
+            text-align: left;
+        }
+        .transaction-box input {
+            width: calc(100% - 22px);
+            padding: 10px;
+            margin: 10px 0;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        .transaction-box button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border: none;
+            border-radius: 4px;
+            background-color: #007bff;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="qr-code">
+            <img src="qr2.jpg" alt="QR Code">
+        </div>
+        <div class="upi-id" id="upiId">technicalsagar78246@oksbi</div>
+        <button class="copy-btn" onclick="copyToClipboard()">Copy UPI ID</button>
+
+        <div class="transaction-box">
+            <h3>Enter Transaction ID</h3>
+            <input type="text" id="transactionId" placeholder="Enter your transaction ID">
+            <button onclick="submitTransaction()">Verify</button>
+        </div>
+    </div>
+
+    <script>
+        function copyToClipboard() {
+            const upiId = document.getElementById('upiId').textContent;
+            navigator.clipboard.writeText(upiId).then(() => {
+                alert('UPI ID copied to clipboard!');
+            }, (err) => {
+                console.error('Could not copy text: ', err);
+            });
+        }
+
+        function submitTransaction() {
+            const transactionId = document.getElementById('transactionId').value;
+            const correctTransactionId = '419298227233';
+            
+            if (transactionId.trim() === '') {
+                alert('Please enter a transaction ID.');
+                return;
+            }
+            
+            if (transactionId === correctTransactionId) {
+                // Redirect to a different page on successful transaction ID match
+                window.location.href = 'courses.html'; // Replace with your desired URL
+            } else {
+                alert('Invalid Transaction ID.');
+            }
+        }
+    </script>
+</body>
+</html>
